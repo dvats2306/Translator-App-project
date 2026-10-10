@@ -1,4 +1,4 @@
-******Translator App using Django*****
+*****Translator App using Django*****
 
 
 This project is a web-based language translator built using the Django framework in Python.
