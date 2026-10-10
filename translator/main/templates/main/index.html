@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translator</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="translate" value="{{ text }}" required>
+    <br>
+    <select required name="language">
+        <option value="hi" {% if language == "hi" %}selected{% endif %}>Hindi</option>
+        <option value="mr" {% if language == "mr" %}selected{% endif %}>Marathi</option>
+        <option value="de" {% if language == "de" %}selected{% endif %}>German</option>
+    </select>
+    <br>
+    <button type="submit">Translate</button>
+</form>
+{% if error %}
+    <p role="alert">{{ error }}</p>
+{% endif %}
+{% if translation %}
+    <h2>Translation</h2>
+    <p>{{ translation }}</p>
+{% endif %}
+</body>
+</html>
